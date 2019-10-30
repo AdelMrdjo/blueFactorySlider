@@ -1,62 +1,62 @@
-var animacijaPokrenuta = false; //dok traje animacija,onemogućeni klikovi(pogrešne atribute preuzima kao i širine slika)
-function go_left(){ //funkcija za pomjeranje na lijevu stranu
-	if(!animacijaPokrenuta){
-		animacijaPokrenuta = !animacijaPokrenuta;
-		/*Prvi red*/
-		var prviRed_zadnji = $('.prvired .onlyimages').children(":first").width();//širina prve slike prvog reda
-		var novaSlikaAtribut = $('.prvired .onlyimages').children(":first").attr('src');//prva slika u prvom redu
-		var novaSlika = $('<img>');//kreiranje nove slike
-		novaSlika.attr('src',novaSlikaAtribut);//kreiranje nove slike
-		$('.prvired .onlyimages').append(novaSlika);//kreiranje nove slike i dodavanje na kraj prvog reda
-		$('.prvired .onlyimages').children(":first").remove();//brisanje prve slike prvog reda
-		$('.prvired .onlyimages').children(":last").width(0);//za animaciju
-		$('.prvired .onlyimages').children(":last").width(prviRed_zadnji);//za animaciju
-		/*Drugi red*/
-		var drugiRed_zadnji = $('.drugired .onlyimages').children(":first").width();//širina prve slike drugog reda
-		var novaSlikaAtribut = $('.drugired .onlyimages').children(":first").attr('src');//prva slika u drugom redu
-		var novaSlika = $('<img>');//kreiranje nove slike
-		novaSlika.attr('src',novaSlikaAtribut);//kreiranje nove slike
-		$('.drugired .onlyimages').append(novaSlika);//kreiranje nove slike i dodavanje na kraj drugog reda
-		$('.drugired .onlyimages').children(":first").remove();//brisanje prve slike drugog reda
-		$('.drugired .onlyimages').children(":last").width(0);//za animaciju
-		$('.drugired .onlyimages').children(":last").width(drugiRed_zadnji);//za animaciju
-		setTimeout(function(){ animacijaPokrenuta = !animacijaPokrenuta; }, 1000);
+var animStarted = false; //while animating, disable clicks
+function goLeft(){ //function for moving pictures to left side
+	if(!animStarted){
+		animStarted = !animStarted;
+		/*First row pictures*/
+		var firstRowFirstItem = $('.firstRow .onlyImages').children(":first").width();//width from first picture first row
+		var newPictureAttr = $('.firstRow .onlyImages').children(":first").attr('src');//first url picture first row
+		var newPicture = $('<img>');//new picture
+		newPicture.attr('src',newPictureAttr);//new picture
+		$('.firstRow .onlyImages').append(newPicture);//new picture append on the end of row
+		$('.firstRow .onlyImages').children(":first").remove();//remove first picture first row
+		$('.firstRow .onlyImages').children(":last").width(0);//for animaction
+		$('.firstRow .onlyImages').children(":last").width(firstRowFirstItem);//for animation
+		/*Second row pictures*/
+		var secondRowFirstItem = $('.secondRow .onlyImages').children(":first").width();//width from first picture second row
+		var newPictureAttr = $('.secondRow .onlyImages').children(":first").attr('src');//first url picture second row
+		var newPicture = $('<img>');//new picture
+		newPicture.attr('src',newPictureAttr);//new picture
+		$('.secondRow .onlyImages').append(newPicture);//new picture append on the end of row
+		$('.secondRow .onlyImages').children(":first").remove();//remove first picture second row
+		$('.secondRow .onlyImages').children(":last").width(0);//for animation
+		$('.secondRow .onlyImages').children(":last").width(secondRowFirstItem);//for animation
+		setTimeout(function(){ animStarted = !animStarted; }, 1000);
 	}
 }
-function go_right(){ //funkcija za pomjeranje na desnu stranu
-	if(!animacijaPokrenuta){
-		animacijaPokrenuta = !animacijaPokrenuta;
-		/*Prvi red*/
-		var prviRed_zadnji = $('.prvired .onlyimages').children(":last").width();//širina zadnje slike prvog reda
-		$('.prvired .onlyimages').children(":last").width(prviRed_zadnji);//za animaciju
-		$('.prvired .onlyimages').children(":last").width(0);//za animaciju
-		var novaSlikaAtribut = $('.prvired .onlyimages').children(":last").attr('src');//zadnja slika u prvom redu
-		var novaSlika = $('<img>');//kreiranje nove slike
-		novaSlika.attr('src',novaSlikaAtribut);//kreiranje nove slike
-		$('.prvired .onlyimages').prepend(novaSlika);//kreiranje nove slike i dodavanje na početak prvog reda
-		setTimeout(function(){ $('.prvired .onlyimages').children(":last").remove(); }, 1000);//nakon sekunde obriši sliku
-		/*Drugi red*/
-		var drugiRed_zadnji = $('.drugired .onlyimages').children(":last").width();//širina zadnje slike drugog reda
-		$('.drugired .onlyimages').children(":last").width(drugiRed_zadnji);//za animaciju
-		$('.drugired .onlyimages').children(":last").width(0);//za animaciju
-		var novaSlikaAtribut = $('.drugired .onlyimages').children(":last").attr('src');//zadnja slika u drugom redu
-		var novaSlika = $('<img>');//kreiranje nove slike
-		novaSlika.attr('src',novaSlikaAtribut);//kreiranje nove slike
-		$('.drugired .onlyimages').prepend(novaSlika);//kreiranje nove slike i dodavanje na početak drugog reda
-		setTimeout(function(){ $('.drugired .onlyimages').children(":last").remove(); }, 1000);//nakon sekunde obriši sliku
-		setTimeout(function(){ animacijaPokrenuta = !animacijaPokrenuta; }, 1000);
+function goRight(){ //function for moving pictures to right side
+	if(!animStarted){
+		animStarted = !animStarted;
+		/*First row pictures*/
+		var firstRowLastItem = $('.firstRow .onlyImages').children(":last").width();//width from last picture first row
+		$('.firstRow .onlyImages').children(":last").width(firstRowLastItem);//for animation
+		$('.firstRow .onlyImages').children(":last").width(0);//for animation
+		var newPictureAttr = $('.firstRow .onlyImages').children(":last").attr('src');//last url picture first row
+		var newPicture = $('<img>');//new picture
+		newPicture.attr('src',newPictureAttr);//new picture
+		$('.firstRow .onlyImages').prepend(newPicture);//new picture append on the start of row
+		setTimeout(function(){ $('.firstRow .onlyImages').children(":last").remove(); }, 1000);//after second delete old picture
+		/*Second row pictures*/
+		var secondRowLastItem = $('.secondRow .onlyImages').children(":last").width();//width from last picture second row
+		$('.secondRow .onlyImages').children(":last").width(secondRowLastItem);//for animation
+		$('.secondRow .onlyImages').children(":last").width(0);//for animation
+		var newPictureAttr = $('.secondRow .onlyImages').children(":last").attr('src');//last url picture second row
+		var newPicture = $('<img>');//new picture
+		newPicture.attr('src',newPictureAttr);//new picture
+		$('.secondRow .onlyImages').prepend(newPicture);//new picture append on the start of row
+		setTimeout(function(){ $('.secondRow .onlyImages').children(":last").remove(); }, 1000);//after second delete old picture
+		setTimeout(function(){ animStarted = !animStarted; }, 1000);
 	}
 }
 /*Event listeners*/
-$(".left_button").hover(function(){ /*Tipka za ulijevo*/
-  $(".left_button img").attr("src", "img/arrow-blue-left.png");
+$(".leftButton").hover(function(){ /*Left button*/
+  $(".leftButton img").attr("src", "img/arrow-blue-left.png");
   }, function(){
-  $(".left_button img").attr("src", "img/arrow-gray-left.png");
+  $(".leftButton img").attr("src", "img/arrow-gray-left.png");
 });
-$(".right_button").hover(function(){ /*Tipka za udesno*/
-  $(".right_button img").attr("src", "img/arrow-blue-right.png");
+$(".rightButton").hover(function(){ /*Right button*/
+  $(".rightButton img").attr("src", "img/arrow-blue-right.png");
   }, function(){
-  $(".right_button img").attr("src", "img/arrow-gray-right.png");
+  $(".rightButton img").attr("src", "img/arrow-gray-right.png");
 });
-$(".left_button").click(go_left);
-$(".right_button").click(go_right);
+$(".leftButton").click(goLeft);
+$(".rightButton").click(goRight);

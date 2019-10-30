@@ -26,15 +26,15 @@ body{
 	width: 90%;
 	line-height: 26px;
 }
-.wrapper .images .prvired{
+.wrapper .images .firstRow{
 	margin-bottom:9px;
 }
-.wrapper .images .drugired,.onlyimages{
+.wrapper .images .secondRow,.onlyImages{
 	display: flex;
 	justify-content: flex-end;
 	height: 200px;
 }
-.onlyimages img{
+.onlyImages img{
 	margin-left: 9px;
 	border-radius:5px;
 	height: 100%;
@@ -43,7 +43,7 @@ body{
 .buttons{
 	margin-left: 90px;
 }
-.left_button,.right_button{
+.leftButton,.rightButton{
 	display: grid;
 	justify-content: center;
 	align-content: center;
@@ -52,15 +52,15 @@ body{
 	height: 60px;
 	width: 60px;
 }
-.right_button{
+.rightButton{
 	margin-top: 9px;
 }
-.left_button img,.right_button img{
+.leftButton img,.rightButton img{
 	margin:0px;
 	width: 10px;
 	height: 15px;
 }
-.left_button:hover,.right_button:hover{
+.leftButton:hover,.rightButton:hover{
 	cursor: pointer;
 	border:1px solid #134880;;
 }
