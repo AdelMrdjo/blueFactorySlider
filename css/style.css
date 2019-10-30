@@ -63,7 +63,7 @@ header {
       height: 200px; }
       .wrapper .images .firstRow .onlyImages img {
         margin-left: 10px;
-        border-radius: 5px;
+        border-radius: 5px 5px 5px 5px;
         height: 100%;
         transition: all linear 1s; }
   .wrapper .images .secondRow {
@@ -76,7 +76,7 @@ header {
       height: 200px; }
       .wrapper .images .secondRow .onlyImages img {
         margin-left: 10px;
-        border-radius: 5px;
+        border-radius: 5px 5px 5px 5px;
         height: 100%;
         transition: all linear 1s; }
     .wrapper .images .secondRow .buttons {
@@ -88,7 +88,7 @@ header {
         justify-content: center;
         align-content: center;
         border: 1px solid gray;
-        border-radius: 5px;
+        border-radius: 5px 5px 5px 5px;
         height: 60px;
         width: 60px; }
         .wrapper .images .secondRow .buttons .leftButton:hover, .wrapper .images .secondRow .buttons .rightButton:hover {

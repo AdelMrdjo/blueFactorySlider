@@ -60,3 +60,20 @@ $(".rightButton").hover(function(){ /*Right button*/
 });
 $(".leftButton").click(goLeft);
 $(".rightButton").click(goRight);
+/*============================ANGULARJS===============================*/
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+	$scope.firstRow = [
+		"slider-image-1.jpg",
+		"slider-image-2.jpg",
+		"slider-image-3.jpg",
+		"slider-image-4.jpg",
+		"slider-image-5.jpg"
+	];
+	$scope.secondRow = [
+		"slider-image-6.jpg",
+		"slider-image-7.jpg",
+		"slider-image-8.jpg",
+		"slider-image-9.jpg"
+	];
+});
