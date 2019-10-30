@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+/*=============================VARIABLES===================================*/
+$grayColor : rgb(221, 221, 221);
+$blueColor : #134880;
+$widthLorem : 35%;
+$space : 20px;  /*Space in header and space between text and images*/
+$spaceAroundPicture : 10px;
+$buttonSize :  60px;
+/*==============================MIXIN=====================================*/
+@mixin headerFooterText{
+	margin:0;
+	color:#fff;
+	font-weight: bold;
+	margin-left: $buttonSize + $space;
+	font-size: 20px;
+}
+@mixin rowsWithImages{
+	& .onlyImages{
+		display: flex;
+		justify-content: flex-end;
+		height: 200px;
+		& img{
+			margin-left: $spaceAroundPicture;
+			border-radius:5px;
+			height: 100%;
+			transition: all linear 1s;
+		}
+	}
+}
+/*==============================BODY======================================*/
+body{
+	margin:0;
+	padding:0;
+	font-family: 'Roboto', sans-serif;
+}
+/*==============================HEADER====================================*/
+header{
+	height: 145px;
+	display: grid;
+	grid-template-columns: $widthLorem auto;
+	grid-gap: $space;
+	& .headerLeft{
+		background:$grayColor;
+		border-radius:0px 0px 5px 0px;
+	}
+	& .headerRight{
+		background:$grayColor;
+		border-radius:0px 0px 0px 5px;
+		display: grid;
+		align-content: center;
+		& p{
+			@include headerFooterText;
+		}
+	}
+}
+/*===============================WRAPPER===================================*/
+.wrapper{
+	height: 407px;
+	margin: $buttonSize 0px;
+	& .info{
+		float:right;
+		width: $widthLorem;
+		height: 100%;
+		margin-left: $space;
+		& h1{
+			margin: 0;
+			padding: 3px 0px;
+			color:$blueColor;
+			font-size:3.3vw;
+			@media screen and (max-width: 800px) {
+				font-size: 22px;
+			}
+		}
+		& p{
+			padding: 0px 5px;
+			text-align: left;
+			width: 90%;
+			line-height: 26px;
+			@media screen and (max-width: 800px) {
+				font-size:16px;
+				line-height: 20px;
+			}
+		}
+	}
+	& .images .firstRow{
+		margin-bottom: $spaceAroundPicture;
+		@include rowsWithImages;
+	}
+	& .images .secondRow{
+		display: flex;
+		justify-content: flex-end;
+		height: 200px;
+		@include rowsWithImages;
+		& .buttons{
+			margin-left: 90px;
+			& .rightButton{
+				margin-top: $spaceAroundPicture;
+			}
+			& .leftButton, & .rightButton{
+				display: grid;
+				justify-content: center;
+				align-content: center;
+				border:1px solid gray;
+				border-radius:5px;
+				height: $buttonSize;
+				width: $buttonSize;
+				&:hover{
+					cursor: pointer;
+					border:1px solid $blueColor;
+				}
+				& img{
+					margin:0px;
+					width: 10px;
+					height: 15px;
+				}
+			}
+		}
+	}
+}
+/*===============================FOOTER====================================*/
+footer{
+	height: 145px;
+	background:$grayColor;
+	border-radius:5px 5px 0px 0px;
+	display: grid;
+	align-content: center;
+	& p{
+		@include headerFooterText;
+	}
+}
