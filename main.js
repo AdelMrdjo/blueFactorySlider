@@ -47,7 +47,7 @@ function go_right(){ //funkcija za pomjeranje na desnu stranu
 		setTimeout(function(){ animacijaPokrenuta = !animacijaPokrenuta; }, 1000);
 	}
 }
-/*Hover od dvije tipke*/
+/*Event listeners*/
 $(".left_button").hover(function(){ /*Tipka za ulijevo*/
   $(".left_button img").attr("src", "img/arrow-blue-left.png");
   }, function(){
@@ -58,3 +58,5 @@ $(".right_button").hover(function(){ /*Tipka za udesno*/
   }, function(){
   $(".right_button img").attr("src", "img/arrow-gray-right.png");
 });
+$(".left_button").click(go_left);
+$(".right_button").click(go_right);
