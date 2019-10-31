@@ -77,7 +77,6 @@ header{
 		& p{
 			padding: 0px 5px;
 			text-align: left;
-			width: 90%;
 			line-height: 26px;
 			@media screen and (max-width: 800px) {
 				font-size:16px;
@@ -95,7 +94,7 @@ header{
 		height: 200px;
 		@include rowsWithImages;
 		& .buttons{
-			margin-left: 90px;
+			margin-left: 2*$space+$buttonSize;
 			& .rightButton{
 				margin-top: $spaceAroundPicture;
 			}
