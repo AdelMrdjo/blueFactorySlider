@@ -47,7 +47,35 @@ function goRight(){ //function for moving pictures to right side
 		setTimeout(function(){ animStarted = !animStarted; }, 1000);
 	}
 }
-/*Event listeners*/
+function addPicture(cssSelector,item) {
+	var newPicture = $('<img>');
+	newPicture.attr('src',item);
+	$(cssSelector).append(newPicture);
+}
+
+/*================UPLOAD IMAGES TO HTML====================*/
+addPicture(".leftButton","img/arrow-gray-left.png");
+addPicture(".rightButton","img/arrow-gray-right.png");
+var firstRow = [
+	"img/slider-image-1.jpg",
+	"img/slider-image-2.jpg",
+	"img/slider-image-3.jpg",
+	"img/slider-image-4.jpg",
+	"img/slider-image-5.jpg"
+];
+var secondRow = [
+	"img/slider-image-6.jpg",
+	"img/slider-image-7.jpg",
+	"img/slider-image-8.jpg",
+	"img/slider-image-9.jpg"
+];
+for(var k=0;k<firstRow.length;k++) {
+	addPicture(".firstRow .onlyImages",firstRow[k]);
+}
+for(var k=0;k<secondRow.length;k++){
+	addPicture(".secondRow .onlyImages",secondRow[k]);
+}
+/*======================EVENT LISTENERS=====================*/
 $(".leftButton").hover(function(){ /*Left button*/
   $(".leftButton img").attr("src", "img/arrow-blue-left.png");
   }, function(){
@@ -60,20 +88,3 @@ $(".rightButton").hover(function(){ /*Right button*/
 });
 $(".leftButton").click(goLeft);
 $(".rightButton").click(goRight);
-/*============================ANGULARJS===============================*/
-var app = angular.module('myApp', []);
-app.controller('myCtrl', function($scope) {
-	$scope.firstRow = [
-		"slider-image-1.jpg",
-		"slider-image-2.jpg",
-		"slider-image-3.jpg",
-		"slider-image-4.jpg",
-		"slider-image-5.jpg"
-	];
-	$scope.secondRow = [
-		"slider-image-6.jpg",
-		"slider-image-7.jpg",
-		"slider-image-8.jpg",
-		"slider-image-9.jpg"
-	];
-});

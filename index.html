@@ -6,7 +6,6 @@
 	<link href="css/style.css" type="text/css" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 </head>
 <body>
 	<header>
@@ -23,19 +22,17 @@
 			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 			consequat.</p>
 		</div>
-		<div class="images" ng-app="myApp" ng-controller="myCtrl">
+		<div class="images">
 			<div class="firstRow">
 				<div class="onlyImages">
-					<img ng-repeat="images in firstRow" ng-src="img/{{images}}">
 				</div>
 			</div>
 			<div class="secondRow">
 				<div class="onlyImages">
-					<img ng-repeat="images in secondRow" ng-src="img/{{images}}">
 				</div>
 				<div class="buttons">
-					<div class="leftButton"><img src="img/arrow-gray-left.png"></div>
-					<div class="rightButton"><img src="img/arrow-gray-right.png"></div>
+					<div class="leftButton"></div>
+					<div class="rightButton"></div>
 				</div>
 			</div>
 		</div>
