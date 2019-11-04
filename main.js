@@ -22,7 +22,7 @@ function goLeft(){ //function for moving pictures to left side
 		$('.secondRow .onlyImages').children(":last").width(secondRowFirstItem);//for animation
 		setTimeout(function(){ animStarted = !animStarted; }, 1000);
 	}
-}
+
 function goRight(){ //function for moving pictures to right side
 	if(!animStarted){
 		animStarted = !animStarted;
