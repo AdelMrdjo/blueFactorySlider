@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+/*=============================VARIABLES===================================*/
+/*Space in header and space between text and images*/
+/*==============================MIXIN=====================================*/
+/*==============================BODY======================================*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+/*==============================HEADER====================================*/
+header {
+  height: 145px;
+  display: grid;
+  grid-template-columns: 35% auto;
+  grid-gap: 20px;
+}
+header .headerLeft {
+  background: #dddddd;
+  border-radius: 0px 0px 5px 0px;
+}
+header .headerRight {
+  background: #dddddd;
+  border-radius: 0px 0px 0px 5px;
+  display: grid;
+  align-content: center;
+}
+header .headerRight p {
+  margin: 0;
+  color: #fff;
+  font-weight: bold;
+  margin-left: 80px;
+  font-size: 20px;
+}
+
+/*===============================WRAPPER===================================*/
+.wrapper {
+  height: 407px;
+  margin: 60px 0px;
+}
+.wrapper .info {
+  float: right;
+  width: 35%;
+  height: 100%;
+  margin-left: 20px;
+}
+.wrapper .info h1 {
+  margin: 0;
+  padding: 3px 0px;
+  color: #134880;
+  font-size: 3.3vw;
+}
+@media screen and (max-width: 800px) {
+  .wrapper .info h1 {
+    font-size: 22px;
+  }
+}
+.wrapper .info p {
+  padding: 0px 5px;
+  text-align: left;
+  line-height: 26px;
+}
+@media screen and (max-width: 800px) {
+  .wrapper .info p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+.wrapper .images .firstRow {
+  margin-bottom: 10px;
+}
+.wrapper .images .firstRow .onlyImages {
+  display: flex;
+  justify-content: flex-end;
+  height: 200px;
+}
+.wrapper .images .firstRow .onlyImages img {
+  margin-left: 10px;
+  border-radius: 5px 5px 5px 5px;
+  height: 100%;
+  transition: all linear 1s;
+}
+.wrapper .images .secondRow {
+  display: flex;
+  justify-content: flex-end;
+  height: 200px;
+}
+.wrapper .images .secondRow .onlyImages {
+  display: flex;
+  justify-content: flex-end;
+  height: 200px;
+}
+.wrapper .images .secondRow .onlyImages img {
+  margin-left: 10px;
+  border-radius: 5px 5px 5px 5px;
+  height: 100%;
+  transition: all linear 1s;
+}
+.wrapper .images .secondRow .buttons {
+  margin-left: 100px;
+}
+.wrapper .images .secondRow .buttons .rightButton {
+  margin-top: 10px;
+}
+.wrapper .images .secondRow .buttons .leftButton, .wrapper .images .secondRow .buttons .rightButton {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  border: 1px solid gray;
+  border-radius: 5px 5px 5px 5px;
+  height: 60px;
+  width: 60px;
+}
+.wrapper .images .secondRow .buttons .leftButton:hover, .wrapper .images .secondRow .buttons .rightButton:hover {
+  cursor: pointer;
+  border: 1px solid #134880;
+}
+.wrapper .images .secondRow .buttons .leftButton img, .wrapper .images .secondRow .buttons .rightButton img {
+  margin: 0px;
+  width: 10px;
+  height: 15px;
+}
+
+/*===============================FOOTER====================================*/
+footer {
+  height: 145px;
+  background: #dddddd;
+  border-radius: 5px 5px 0px 0px;
+  display: grid;
+  align-content: center;
+}
+footer p {
+  margin: 0;
+  color: #fff;
+  font-weight: bold;
+  margin-left: 80px;
+  font-size: 20px;
+}
+
+/*# sourceMappingURL=/js.00a46daa.css.map */
